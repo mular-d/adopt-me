@@ -2,9 +2,10 @@ import { Component } from 'react'
 import { useParams } from 'react-router-dom'
 
 import Carousel from './Carousel.js'
+import ErrorBoundary from './ErrorBoundary'
 
 class Details extends Component {
-  state = { loading: true }
+  state = { loading: true, redirect: false }
 
   async componentDidMount() {
     const res = await fetch(
@@ -40,7 +41,11 @@ class Details extends Component {
 
 const WrapedDetails = () => {
   const params = useParams()
-  return <Details params={params} />
+  return (
+    <ErrorBoundary>
+      <Details params={params} />
+    </ErrorBoundary>
+  )
 }
 
 export default WrapedDetails
