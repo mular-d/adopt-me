@@ -2,7 +2,7 @@
   "name": "adopt-me",
   "version": "7.0.0",
   "description": "Adopt pets via adopt-me",
-  "main": "src/App.js",
+  "main": "src/app.jsx",
   "scripts": {
     "dev": "parcel src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
