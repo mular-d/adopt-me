@@ -1,8 +1,10 @@
-import Pet from "./Pet";
+import {FunctionComponent} from 'react'
+import { Pet as PetType } from './APIResponsesTypes'
+import Pet from './Pet'
 
-const Results = ({ pets }) => {
+const Results: FunctionComponent<{ pets: PetType[]}> = ({ pets }) => {
   return (
-    <div className="search">
+    <div className='search'>
       {!pets.length ? (
         <h1>No Pets Found</h1>
       ) : (
@@ -17,11 +19,11 @@ const Results = ({ pets }) => {
               location={`${pet.city}, ${pet.state}`}
               id={pet.id}
             />
-          );
+          )
         })
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Results;
+export default Results
